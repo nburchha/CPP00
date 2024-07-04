@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niklasburchhardt <niklasburchhardt@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/04 21:39:30 by niklasburch       #+#    #+#             */
-/*   Updated: 2024/07/04 22:22:29 by niklasburch      ###   ########.fr       */
+/*   Created: 2024/07/04 21:55:00 by niklasburch       #+#    #+#             */
+/*   Updated: 2024/07/04 23:25:27 by niklasburch      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
-std::string to_uppercase(std::string s)
-{
-	for (int i = 0; s[i]; i++)
-	{
-		if (std::islower(s[i]))
-			std::toupper(s[i]);
-	}
-	return (s);
-}
+# include <iostream>
+# include <string>
+# include <iomanip>
+# include "Contact.hpp"
 
-int main(int argc, char **argv)
+class PhoneBook
 {
-	if (argc == 1)
-		return (std::cout << "* LOUD AND UNBEREABLE FEEDBACK NOISE *" << std::endl, 0);
-	for (int i = 1; i < argc; i++)
-		std::cout << to_uppercase(argv[i]);
-	std::cout << std::endl;
-	return (0);
-}
+	private:
+		Contact contacts[8];
+		int count;
+		int index;
+	public:
+		PhoneBook();
+		void add();
+		void search();
+};
+
+#endif
