@@ -2,3 +2,4 @@
 .vscode
 phonebook
 megaphone
+*.log
