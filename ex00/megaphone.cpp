@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niklasburchhardt <niklasburchhardt@stud    +#+  +:+       +#+        */
+/*   By: nburchha <nburchha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 21:39:30 by niklasburch       #+#    #+#             */
-/*   Updated: 2024/07/04 22:22:29 by niklasburch      ###   ########.fr       */
+/*   Updated: 2024/07/09 14:02:45 by nburchha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 std::string to_uppercase(std::string s)
 {
 	for (int i = 0; s[i]; i++)
-	{
-		if (std::islower(s[i]))
-			std::toupper(s[i]);
-	}
+		s[i] = std::toupper(s[i]);
 	return (s);
 }
 

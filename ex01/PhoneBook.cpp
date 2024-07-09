@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niklasburchhardt <niklasburchhardt@stud    +#+  +:+       +#+        */
+/*   By: nburchha <nburchha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 21:57:54 by niklasburch       #+#    #+#             */
-/*   Updated: 2024/07/09 08:22:09 by niklasburch      ###   ########.fr       */
+/*   Updated: 2024/07/09 14:24:37 by nburchha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ std::string put_message_get_input(std::string message)
 	std::cout << message;
 	std::getline(std::cin, input);
 	if (std::cin.eof())
-		exit(0);
+		std::exit(0);
 	if (input.empty())
 	{
 		std::cout << "Invalid input" << std::endl;
@@ -54,11 +54,15 @@ std::string check_phone(std::string phone)
 
 std::string check_name(std::string name, std::string message)
 {
-	if (std::any_of(name.begin(), name.end(), ::isdigit))
+	for (int i = 0; name[i]; i++)
 	{
-		std::cout << "Invalid name" << std::endl;
-		return check_name(put_message_get_input(message), message);
+		if (name[i] >= '0' && name[i] <= '9')
+		{
+			std::cout << "Invalid name" << std::endl;
+			return check_name(put_message_get_input(message), message);
+		}
 	}
+	
 	return name;
 }
 
@@ -94,7 +98,7 @@ void PhoneBook::search()
 		else
 		{
 			try {
-				int index = std::stoi(input);
+				int index = std::atoi(input.c_str());
 				if (index >= 0 && index < count)
 					contacts[index].display_details();
 				else

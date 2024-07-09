@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niklasburchhardt <niklasburchhardt@stud    +#+  +:+       +#+        */
+/*   By: nburchha <nburchha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 21:55:00 by niklasburch       #+#    #+#             */
-/*   Updated: 2024/07/04 23:25:27 by niklasburch      ###   ########.fr       */
+/*   Updated: 2024/07/09 14:18:02 by nburchha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <iostream>
 # include <string>
 # include <iomanip>
+# include <cctype>
+# include <cstdlib>
 # include "Contact.hpp"
 
 class PhoneBook
