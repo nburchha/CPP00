@@ -6,7 +6,7 @@
 /*   By: niklasburchhardt <niklasburchhardt@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 21:53:52 by niklasburch       #+#    #+#             */
-/*   Updated: 2024/07/04 23:25:37 by niklasburch      ###   ########.fr       */
+/*   Updated: 2024/07/08 18:10:40 by niklasburch      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int main(void)
 	{
 		std::cout << "> ";
 		std::getline(std::cin, line);
+		if (std::cin.eof())
+			break ;
 		if (line == "ADD")
 			phone_book.add();
 		else if (line == "SEARCH")

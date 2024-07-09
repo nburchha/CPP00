@@ -6,7 +6,7 @@
 /*   By: niklasburchhardt <niklasburchhardt@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 21:57:54 by niklasburch       #+#    #+#             */
-/*   Updated: 2024/07/04 23:27:06 by niklasburch      ###   ########.fr       */
+/*   Updated: 2024/07/09 08:22:09 by niklasburch      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ std::string put_message_get_input(std::string message)
 
 	std::cout << message;
 	std::getline(std::cin, input);
+	if (std::cin.eof())
+		exit(0);
 	if (input.empty())
 	{
 		std::cout << "Invalid input" << std::endl;
@@ -32,15 +34,21 @@ std::string put_message_get_input(std::string message)
 	return input;
 }
 
-int check_phone(std::string phone)
+bool is_valid_phone(const std::string &phone)
 {
-	try {
-		return std::stoi(phone);
-	} catch (const std::invalid_argument& e) {
-		std::cout << "Invalid phone number" << std::endl;
-	} catch (const std::out_of_range& e) {
-		std::cout << "Phone number is too long" << std::endl;
-	}
+	if (phone.length() < 7 || phone.length() > 15)
+		return false;
+	for (size_t i = 0; i < phone.length(); i++)
+		if (!std::isdigit(phone[i]))
+			return false;
+	return true;
+}
+
+std::string check_phone(std::string phone)
+{
+	if (is_valid_phone(phone))
+		return phone;
+	std::cout << "Invalid phone number" << std::endl;
 	return check_phone(put_message_get_input("Enter phone number: "));
 }
 

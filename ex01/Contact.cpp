@@ -6,16 +6,11 @@
 /*   By: niklasburchhardt <niklasburchhardt@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 21:52:27 by niklasburch       #+#    #+#             */
-/*   Updated: 2024/07/04 23:27:18 by niklasburch      ###   ########.fr       */
+/*   Updated: 2024/07/09 08:17:45 by niklasburch      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-
-Contact::Contact()
-{
-	_phone = 0;
-}
 
 void Contact::set_first_name(std::string first_name)
 {
@@ -32,7 +27,7 @@ void Contact::set_nickname(std::string nickname)
 	_nickname = nickname;
 }
 
-void Contact::set_phone(int phone)
+void Contact::set_phone(std::string phone)
 {
 	_phone = phone;
 }
@@ -41,31 +36,6 @@ void Contact::set_darkest_secret(std::string darkest_secret)
 {
 	_darkest_secret = darkest_secret;
 }
-
-// std::string Contact::get_first_name()
-// {
-// 	return _first_name;
-// }
-
-// std::string Contact::get_last_name()
-// {
-// 	return _last_name;
-// }
-
-// std::string Contact::get_nickname()
-// {
-// 	return _nickname;
-// }
-
-// int Contact::get_phone()
-// {
-// 	return _phone;
-// }
-
-// std::string Contact::get_darkest_secret()
-// {
-// 	return _darkest_secret;
-// }
 
 void	Contact::display_names(int index)
 {
