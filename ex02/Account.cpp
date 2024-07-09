@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niklasburchhardt <niklasburchhardt@stud    +#+  +:+       +#+        */
+/*   By: nburchha <nburchha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 20:19:23 by nburchha          #+#    #+#             */
-/*   Updated: 2024/07/09 09:06:53 by niklasburch      ###   ########.fr       */
+/*   Updated: 2024/07/09 14:28:52 by nburchha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
